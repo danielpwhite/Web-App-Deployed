@@ -1,7 +1,6 @@
-from flask import Flask, jsonify, request
-import jwt
+from flask import Flask, request
 import secrets
-
+from auth import require_token, authenticate
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
@@ -9,18 +8,18 @@ app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
 
 # Define the authentication API
 @app.route('/auth', methods=['POST'])
-def authenticate():
+def authenticate_user():
     username = request.json.get('username')
     password = request.json.get('password')
 
-    # TODO: Check if username and password are valid
-    # If not, return a 401 Unauthorized response
+    return authenticate(username, password)
 
-    # If the credentials are valid, create a JWT containing the user's ID
-    payload = {'user_id': 12345}
-    access_token = jwt.encode(payload, app.config['SECRET_KEY'])
 
-    return jsonify({'access_token': access_token.decode(utf=8)}), 200
+@app.route('/protected')
+@require_token
+def protected():
+    # TODO: Implement protected route logic
+    pass
 
 
 if __name__ == "__main__":
