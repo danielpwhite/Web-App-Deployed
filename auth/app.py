@@ -1,8 +1,11 @@
 from flask import Flask, jsonify, request
-import jwt, secrets
+import jwt
+import secrets
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
+
 
 # Define the authentication API
 @app.route('/auth', methods=['POST'])
@@ -17,7 +20,8 @@ def authenticate():
     payload = {'user_id': 12345}
     access_token = jwt.encode(payload, app.config['SECRET_KEY'])
 
-    return jsonify({'access_token': access_token.decode(utf-8)}), 200
-    
+    return jsonify({'access_token': access_token.decode(utf=8)}), 200
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
