@@ -1,9 +1,14 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import secrets
 from auth import require_token, authenticate
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 # Define the authentication API
