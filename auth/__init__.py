@@ -1,2 +1,2 @@
-from auth.auth import require_token, authenticate
+from .auth import require_token, authenticate
 
