@@ -1,4 +1,5 @@
-# Use an official Python runtime as a parent image
+# Use an official Python runtime as the parent image \
+# much lighter than a full Ubuntu image
 FROM python:3.8-slim-buster
 
 # Set the working directory to /app
