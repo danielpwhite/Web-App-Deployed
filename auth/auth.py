@@ -1,8 +1,7 @@
-from flask import request, jsonify, current_app
 from datetime import datetime, timedelta
 import jwt
 
-JWT_SECRET = 'myjwtsecret'
+SECRET = 'myjwtsecret'
 
 
 # This function checks if the given username and password are valid.
@@ -18,37 +17,8 @@ def authenticate(username, password):
             'sub': username
         }
         # Encode payload into JWT access token using the secret key
-        access_token = jwt.encode(payload, JWT_SECRET, algorithm='HS256')
-        # Return access token and payload in a JSON response with 200 status code
-        return jsonify({'access_token': access_token, 'payload': payload}), 200
+        token = jwt.encode(payload, SECRET, algorithm="HS256")
+        return token
     else:
-        # Return error message in a JSON response with 401 status code
-        return jsonify({'error': 'Invalid username or password'}), 401
+        return None
 
-
-# This function is a decorator that checks if the request contains a valid JWT access token.
-# If it does, it attaches the decoded payload to the request object for use in the route function.
-# If it does not, it returns an error response.
-def require_token(f):
-    def wrapper(*args, **kwargs):
-        # Get the access token from the Authorization header
-        token = request.headers.get('Authorization')
-        if not token:
-            # Return error message if token is missing in a JSON response with 401 status code
-            return jsonify({'error': 'Missing authorization token'}), 401
-
-        try:
-            # Decode the access token using the secret key
-            payload = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=['HS256'])
-            # TODO: Check if user ID in payload is valid
-        except jwt.exceptions.DecodeError:
-            # Return error message if token is invalid in a JSON response with 401 status code
-            return jsonify({'error': 'Invalid authorization token'}), 401
-
-        # Attach the payload to the request object for use in the route function
-        request.payload = payload
-
-        # Call the route function with the modified request object and return the response
-        return f(*args, **kwargs)
-
-    return wrapper
