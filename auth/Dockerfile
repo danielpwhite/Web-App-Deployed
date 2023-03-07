@@ -1,4 +1,4 @@
-# Use an official Python runtime as the parent image \
+# Using an official python runtime as the parent image -
 # much lighter than a full Ubuntu image
 FROM python:3.8-slim-buster
 
