@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 import secrets
 from auth import authenticate
-import requests
 import jwt
 
 app = Flask(__name__)
@@ -34,14 +33,14 @@ def login():
     except jwt.DecodeError:
         return jsonify({'error': 'Invalid token'}), 401
 
-    return jsonify({'username': username, 'experation': exp})
+    return jsonify({'username': username, 'expiration': exp})
 
 
 # Define the authentication API
 @app.route('/authenticate', methods=['POST'])
 def authenticate_user():
-    username = request.json.get('username')
-    password = request.json.get('password')
+    username = request.form.get('username')
+    password = request.form.get('password')
 
     return authenticate(username, password)
 

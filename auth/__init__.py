@@ -1,2 +1,2 @@
-
+from .auth import authenticate
 
