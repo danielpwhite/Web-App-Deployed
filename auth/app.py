@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('login.html')
 
 
 # Define the login API
