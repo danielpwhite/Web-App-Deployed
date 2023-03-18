@@ -1,18 +1,18 @@
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 import secrets
-from auth import authenticate
+from authentication import authenticate
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from .models import db, User
-import os
+from models import db, User
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:password@localhost:5432/db'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 db.init_app(app)
+
 
 
 @app.route('/')

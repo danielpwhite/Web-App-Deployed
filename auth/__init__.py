@@ -1,3 +1,3 @@
-from .auth import authenticate
-from .models import db, User
+# from authentication import authenticate
+# from models import db, User
 

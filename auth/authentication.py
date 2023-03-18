@@ -1,5 +1,5 @@
 from flask_login import login_user
-from .models import User
+from models import User
 from werkzeug.security import check_password_hash
 
 
