@@ -1,10 +1,18 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, redirect, url_for
 import secrets
 from auth import authenticate
-import jwt
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from .models import db, User
+import os
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+db.init_app(app)
 
 
 @app.route('/')
@@ -12,40 +20,37 @@ def index():
     return render_template('login.html')
 
 
+# Loader function
+# Returns a user object based on user_id from our db
+@login_manager.user_loader
+def load_user(user_id):
+    user = User.query.get(int(user_id))
+    return user
+
+
 # Define the login API
 @app.route('/login', methods=['POST'])
+@login_required
 def login():
     username = request.form.get('username')
     password = request.form.get('password')
+    authenticated = authenticate(username, password)
 
-    # Call the authenticate function to validate user credentials
-    token = authenticate(username, password)
-
-    # Check if authentication was successful
-    if not token:
+    if not authenticated:
         return jsonify({'error': 'Invalid credentials'}), 401
 
-    # Decode the token and extract the information it contains
-    try:
-        payload = jwt.decode(token, 'myjwtsecret', algorithms=["HS256"])
-        username = payload['sub']
-        exp = payload['exp']
-    except jwt.DecodeError:
-        return jsonify({'error': 'Invalid token'}), 401
-
-    return jsonify({'username': username, 'expiration': exp})
+    return redirect(url_for('protected'))
 
 
-# Define the authentication API
-@app.route('/authenticate', methods=['POST'])
-def authenticate_user():
-    username = request.form.get('username')
-    password = request.form.get('password')
-
-    return authenticate(username, password)
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 
 @app.route('/protected')
+@login_required
 def protected():
     return 'Protected logic here'
 
