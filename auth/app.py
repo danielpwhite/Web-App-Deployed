@@ -2,20 +2,28 @@ from flask import Flask, request, render_template, jsonify, redirect, url_for
 import secrets
 import os
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-if os.environ.get('DOCKER'):
-    from .authentication import authenticate
-    from .models import db, User
+from flask_migrate import Migrate
+# if os.environ.get('DOCKER'):
+from .authentication import authenticate
+from .models import db, User
+'''
 else:
     from authentication import authenticate
     from models import db, User
+'''
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 
+# Create and initialize flask-login object
 login_manager = LoginManager()
 login_manager.init_app(app)
+# Initialize db
 db.init_app(app)
+# Update database schema
+migrate = Migrate(app, db)
 
 
 @app.route('/')
@@ -43,7 +51,6 @@ def register():
 
 # Define the login API
 @app.route('/login', methods=['POST'])
-@login_required
 def login():
     username = request.form.get('username')
     password = request.form.get('password')

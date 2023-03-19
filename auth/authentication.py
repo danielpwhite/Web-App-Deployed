@@ -1,10 +1,12 @@
 from flask_login import login_user
 from werkzeug.security import check_password_hash
 import os
-if os.environ.get('DOCKER'):
-    from .models import User
+# if os.environ.get('DOCKER'):
+from .models import User
+'''
 else:
     from models import User
+'''
 
 
 def authenticate(username, password):
