@@ -18,7 +18,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Set environment variables
-ENV FLASK_APP=app.py
+ENV DOCKER=1
+ENV FLASK_APP=app
 ENV FLASK_RUN_HOST=0.0.0.0
 
 # Run the command to start the server
