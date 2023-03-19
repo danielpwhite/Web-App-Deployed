@@ -1,0 +1,23 @@
+version: "0.1"
+services:
+  auth:
+    build: ./auth
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://username:password@db:5432/postgresql_db
+      - DOCKER=1
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgresql_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
