@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify, redirect, url_for
+from flask import Flask, request, render_template, jsonify, redirect, url_for, send_from_directory
 import secrets
 import os
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
@@ -81,6 +81,11 @@ def protected():
 def load_user(user_id):
     user = User.query.get(int(user_id))
     return user
+
+
+@app.route('/auth/static/<path:path>')
+def send_static(path):
+    return send_from_directory('static', path)
 
 
 if __name__ == "__main__":

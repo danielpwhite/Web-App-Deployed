@@ -2,20 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <link href="{{ url_for('send_static', path='/css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('send_static', path='/js/bootstrap.bundle.min.js') }}"></script>
+
 </head>
 <body>
-
     <h1>Login Form</h1>
 
-    <form action="/login" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Submit">
+    <form action="/login" method="POST" class="container mt-5">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" id="username" name="username" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
 </body>
 </html>
