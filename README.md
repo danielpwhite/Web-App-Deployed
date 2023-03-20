@@ -1,4 +1,4 @@
-# Web-App-Deployed
+# Web-App-Deployment
 This project is a training exercise for:
 
 1) web development -- creating a microservices-based web application using Python's Flask.
