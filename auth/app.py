@@ -11,7 +11,7 @@ else:
     from authentication import authenticate
     from models import db, User
 '''
-
+# first commit/push
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
