@@ -6,16 +6,13 @@ services:
       - "5000:5000"
     depends_on:
       - db
-    environment:
-      - DATABASE_URL=postgresql://username:password@db:5432/postgresql_db
-      - DOCKER=1
+    env_file:
+      - .env
 
   db:
     image: postgres:13
-    environment:
-      POSTGRES_USER: username
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: postgresql_db
+    env_file:
+      - .env
     volumes:
       - pgdata:/var/lib/postgresql/data
 
