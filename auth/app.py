@@ -3,14 +3,9 @@ import secrets
 import os
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask_migrate import Migrate
-# if os.environ.get('DOCKER'):
-from .authentication import authenticate
-from .models import db, User
-'''
-else:
-    from authentication import authenticate
-    from models import db, User
-'''
+
+from authentication import authenticate
+from models import db, User
 
 
 app = Flask(__name__)

@@ -11,16 +11,12 @@ COPY . /auth
 # Install the required packages
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make sure the auth module is included in the Docker image
-#RUN pip install -e .
-
 # Expose port 5000
 EXPOSE 5000
 
 # Set environment variables
-ENV DOCKER=1
-ENV FLASK_APP=app
-ENV FLASK_RUN_HOST=0.0.0.0
+ENV PYTHONPATH="/auth:${PYTHONPATH}"
+ENV FLASK_APP=app.py
 
 # Run the command to start the server
-CMD ["flask", "run"]
+CMD ["gunicorn", "-w", "4", "--bind",  "0.0.0.0:5000", "app:app"]
