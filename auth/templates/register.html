@@ -17,12 +17,15 @@
             });
         });
     </script>
+    <style>
+        .no-underline {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <h1>Register</h1>
-
-        <a href="http://localhost:5000">Login</a>
 
         <form method="POST" action="{{  url_for('register') }}" class="container mt-5">
             <div class="mb-3">
@@ -34,6 +37,7 @@
                 <input type="password" id="password" name="password" required class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
+            <a href="{{ url_for('index') }}" class="btn btn-link no-underline">Sign in instead</a>
         </form>
     </div>
 </body>
