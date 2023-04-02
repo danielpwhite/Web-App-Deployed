@@ -17,10 +17,15 @@
             });
         });
     </script>
+    <style>
+        .no-underline {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Login Form</h1>
-
+    
     <form action="/login" method="POST" class="container mt-5">
         <div class="mb-3">
             <label for="username" class="form-label">Username:</label>
@@ -31,6 +36,7 @@
             <input type="password" id="password" name="password" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{{ url_for('register') }}" class="btn btn-link no-underline">Create an account</a>
     </form>
 </body>
 </html>

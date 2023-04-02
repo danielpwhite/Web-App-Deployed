@@ -17,6 +17,11 @@
             });
         });
     </script>
+    <style>
+        .no-underline {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -24,14 +29,15 @@
 
         <form method="POST" action="{{  url_for('register') }}" class="container mt-5">
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
+                <label for="username" class="form-label">Username:</label>
                 <input type="text" id="username" name="username" required class="form-control">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">Password:</label>
                 <input type="password" id="password" name="password" required class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
+            <a href="{{ url_for('index') }}" class="btn btn-link no-underline">Sign in instead</a>
         </form>
     </div>
 </body>
