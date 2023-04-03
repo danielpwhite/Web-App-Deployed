@@ -49,11 +49,13 @@ def register():
 def login():
     username = request.form.get('username')
     password = request.form.get('password')
-    authenticated = authenticate(username, password)
+    user = authenticate(username, password)
 
-    if not authenticated:
+    if user is None:
         return jsonify({'error': 'Invalid credentials'}), 401
 
+    # Ensure user is logged in
+    login_user(user)
     return redirect(url_for('protected'))
 
 
@@ -67,7 +69,7 @@ def logout():
 @app.route('/protected')
 @login_required
 def protected():
-    return 'Protected logic here'
+    return render_template('protected.html')
 
 
 # Loader function

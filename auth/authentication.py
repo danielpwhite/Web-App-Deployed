@@ -9,6 +9,6 @@ def authenticate(username, password):
 
     if user is not None and check_password_hash(user.password, password):
         login_user(user)
-        return True
+        return user
     else:
-        return False
+        return None
