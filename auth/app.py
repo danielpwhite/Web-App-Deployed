@@ -8,7 +8,7 @@ from authentication import authenticate
 from models import db, User
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='assets')
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 
