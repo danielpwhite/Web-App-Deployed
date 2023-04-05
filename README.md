@@ -17,7 +17,7 @@ The application will consist of several services, including authentication, cata
 - [Celery](https://github.com/celery/celery)
 
 ### Front-end
-- [esbuild](https://esbuild.github.io/)
+- [Gulp](https://gulpjs.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
 ### JS Framework
