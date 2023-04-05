@@ -1,23 +1,33 @@
-from flask import Flask, request, render_template, jsonify, redirect, url_for, send_from_directory
+import redis
+from flask import Flask, request, render_template, jsonify, redirect, url_for, send_from_directory, session
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from flask_session import Session
+from flask_migrate import Migrate
+from redis import Redis
 import secrets
 import os
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from flask_migrate import Migrate
 
 from authentication import authenticate
 from models import db, User
 
 
 app = Flask(__name__, static_folder='assets')
+
+# Configure the Flask app to use Redis for session storage
+app.config["SESSION_TYPE"] = "redis"
+app.config["SESSION_REDIS"] = redis.Redis(host="redis", port=6379, db=0)
+
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 
 # Create and initialize flask-login object
 login_manager = LoginManager()
 login_manager.init_app(app)
-# Initialize db
+
+# Initialize Flask-Session
+Session(app)
+# Initialize db and update database schema
 db.init_app(app)
-# Update database schema
 migrate = Migrate(app, db)
 
 

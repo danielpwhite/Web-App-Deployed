@@ -1,5 +1,4 @@
-# Using an official python runtime as the parent image -
-# much lighter than a full Ubuntu image
+# Setup Python environment and copy built assets
 FROM python:3.8-slim-buster
 
 # Set the working directory to /app
