@@ -11,8 +11,6 @@ Orchestrating and managing containerized applications to ensure scalability, fau
 Leveraging the power of AWS to host and maintain a Kubernetes cluster, simplifying the process of deploying and managing containerized                                 applications at scale.
 ### Monitoring
 Using Prometheus to track the performance and health of the application's services, ensuring reliability and rapid troubleshooting.
-### Helm
-Streamlining the management of Kubernetes deployments with Helm charts, making it easier to define, install, and upgrade complex applications.
 
 
 ## Tech Stack
@@ -34,5 +32,4 @@ Streamlining the management of Kubernetes deployments with Helm charts, making i
 - [Docker](https://www.docker.com/) 
 - [Kubernetes](https://kubernetes.io/)
 - [Amazon EKS](https://aws.amazon.com/eks/)
-- [Helm](https://helm.sh/)
 - [Prometheus](https://prometheus.io/)
