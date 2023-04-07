@@ -5,10 +5,10 @@ This project is a training exercise for:
 Building a microservices-based web application with separate authentication, catalog, and orders services that communicate via RESTful APIs.
 ### Containerization
 Packaging each service as a Docker container, enabling consistent deployment and runtime environments across different stages of the application                       lifecycle.
-### Kubernetes
-Orchestrating and managing containerized applications to ensure scalability, fault tolerance, and efficient resource utilization.
-### Amazon EKS
-Leveraging the power of AWS to host and maintain a Kubernetes cluster, simplifying the process of deploying and managing containerized                                 applications at scale.
+### Orcherstration
+Orchestrating and managing containerized applications with Kubernetes to ensure scalability, fault tolerance, and efficient resource utilization.
+### Cloud
+Leveraging the power of AWS to host and maintain a Kubernetes cluster using Amazon Elastic Kubernetes Service (EKS), simplifying the process of deploying and managing containerized                                 applications at scale.
 ### Monitoring
 Using Prometheus to track the performance and health of the application's services, ensuring reliability and rapid troubleshooting.
 
