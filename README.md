@@ -1,10 +1,12 @@
 # Web-App-Deployed
 This project is a training exercise for:
 
-1. Web Development -- creating a microservices-based web application 
-2. Containerization -- deploying and monitoring containerized services
-3. Kubernetes - orchestrating and managing containerized applications
-4. Amazon EKS - deploying and managing a Kubernetes cluster on AWS
+1. Web development  - Building a microservices-based web application with separate authentication, catalog, and orders services that communicate via RESTful APIs.
+2. Containerization - Packaging each service as a Docker container, enabling consistent deployment and runtime environments across different stages of the application                       lifecycle.
+3. Kubernetes       - Orchestrating and managing containerized applications to ensure scalability, fault tolerance, and efficient resource utilization.
+4. Amazon EKS       - Leveraging the power of AWS to host and maintain a Kubernetes cluster, simplifying the process of deploying and managing containerized                                 applications at scale.
+5. Monitoring       - Using Prometheus to track the performance and health of the application's services, ensuring reliability and rapid troubleshooting.
+6. Helm             - Streamlining the management of Kubernetes deployments with Helm charts, making it easier to define, install, and upgrade complex applications.
 
 The goal of this project is to deepen our understanding of modern web development and enhance our ability to build, test, and deploy scalable, fault-tolerant systems. 
 
