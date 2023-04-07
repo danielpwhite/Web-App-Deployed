@@ -13,7 +13,7 @@ from models import db, User
 
 app = Flask(__name__, static_folder='assets')
 
-# Configure the Flask app to use Redis for session storage
+# Configure the flask app to use redis for session storage
 app.config["SESSION_TYPE"] = "redis"
 app.config["SESSION_REDIS"] = redis.Redis(host="redis", port=6379, db=0)
 
@@ -24,7 +24,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# Initialize Flask-Session
+# Initialize flask-session
 Session(app)
 # Initialize db and update database schema
 db.init_app(app)
