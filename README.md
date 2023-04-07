@@ -2,7 +2,7 @@
 This project is a training exercise for:
 
 ### Web development
-Building a microservices-based web application with separate authentication, catalog, and orders services that communicate via RESTful APIs.
+Building a microservices-based web application with separate authentication and portfolio services that communicate via RESTful APIs.
 ### Containerization
 Packaging each service as a Docker container, enabling consistent deployment and runtime environments across different stages of the application                       lifecycle.
 ### Orcherstration
