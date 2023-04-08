@@ -26,6 +26,8 @@ Implementing Prometheus for monitoring the performance and health of the applica
 - [Gulp](https://gulpjs.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
+![frontend_auth](https://user-images.githubusercontent.com/125773449/230702709-5ef35f04-e8c2-4f1b-9bbd-9a976778222e.PNG)
+
 ### JS Framework
 - [jQuery](https://jquery.com/)
 
@@ -34,3 +36,4 @@ Implementing Prometheus for monitoring the performance and health of the applica
 - [Kubernetes](https://kubernetes.io/)
 - [Amazon EKS](https://aws.amazon.com/eks/)
 - [Prometheus](https://prometheus.io/)
+
