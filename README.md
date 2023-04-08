@@ -1,5 +1,5 @@
 # Web-App-Deployed
-This project is a training exercise that combines multiple disciplines to build a comprehensive and cohesive microservices-based web application. By interweaving these disciplines, this project aims to showcase a holistic approach to modern web development and devops by creating a seamless, scalable, and fault-tolerant system.
+This project is a training exercise combining multiple disciplines to build a containerized web application. By interweaving these disciplines, this project aims to showcase a scalable, fault-tolerant approach to modern web development and devops.
 
 ### Web development
 Designing a microservices-based web application consisting of authentication and portfolio services that seamlessly communicate via RESTful APIs, forming the foundation of the application.
