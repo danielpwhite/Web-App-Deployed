@@ -1,17 +1,18 @@
 # Web-App-Deployed
-This project is a training exercise for:
+This project is a training exercise that combines multiple disciplines to build a comprehensive and cohesive microservices-based web application. By interweaving these disciplines, this project aims to showcase a holistic approach to modern web development and devops by creating a seamless, scalable, and fault-tolerant system.
 
 ### Web development
-Building a microservices-based web application with separate authentication and portfolio services that communicate via RESTful APIs.
+Designing a microservices-based web application consisting of authentication and portfolio services that seamlessly communicate via RESTful APIs, forming the foundation of the application.
 ### Containerization
-Packaging each service as a Docker container, enabling consistent deployment and runtime environments across different stages of the application                       lifecycle.
-### Orcherstration
-Orchestrating and managing containerized applications with Kubernetes to ensure scalability, fault tolerance, and efficient resource utilization.
+Utilizing Docker to package each service into a container, ensuring consistent deployment and runtime environments throughout the application lifecycle, providing a strong basis for scalability and manageability.
+### Networking
+Establishing a secure and functional network to host the application on multiple devices, initially self-hosted for learning purposes and cost-efficiency, enabling seamless integration with containerization and Kubernetes.
+### Kubernetes
+Leveraging Kubernetes for the orchestration and management of containerized applications, ensuring scalability, fault tolerance, and efficient resource utilization, working in harmony with the network and containerization aspects.
 ### Cloud
-Leveraging the power of AWS to host and maintain a Kubernetes cluster using Amazon Elastic Kubernetes Service (EKS), simplifying the process of deploying and managing containerized                                 applications at scale.
+Transitioning to AWS and Amazon Elastic Kubernetes Service (EKS) for a more robust, cloud-based solution that simplifies the deployment and management of the application at scale, elevating the project's capabilities and resilience.
 ### Monitoring
-Using Prometheus to track the performance and health of the application's services, ensuring reliability and rapid troubleshooting.
-
+Implementing Prometheus for monitoring the performance and health of the application's services across all stages, ensuring reliability and rapid troubleshooting, tying together all aspects of the project for a comprehensive understanding of the system.
 
 ## Tech Stack
 
