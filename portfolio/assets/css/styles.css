@@ -1,11 +1,53 @@
-/*---- Header ----*/
-header {
-  background-image: url('/portfolio/assets/img/header-bg.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* --Loading bar --*/
+#loading-bar-container {
+  position: fixed;
+  top: 50%;
+  left: 25%; /* Adjust the left position to center the loading bar */
+  width: 50%; /* Adjust the width of the loading bar */
+  height: 4px;
+  background-color: #eee;
+  z-index: 9999;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+
+#loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #3498db;
+}
+
+#loading-number {
+  position: absolute;
+  right: 10px;
+  top: -30px;
+  font-size: 16px;
+  color: #3498db;
+}
+
+.techie-font {
+  font-family: 'Roboto Mono', monospace;
+}
+
+
+/*---- Hide Main Content Initially ----*/
+.main-content {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.show-content {
+  opacity: 1;
+}
+
+/*---- Header ----*/
+header {
+  background-color: var(--celtic-blue)
+}
 
 body {
 
@@ -25,7 +67,40 @@ h1, h2, h3, h4, h5, h6 {
   color: #4a4a4a;
 }
 
-/* Add custom styles for buttons */
+/* Make the main picture smaller */
+.portfolio-item img {
+  max-width: 80%; /* Adjust the width of the image */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Center main image */
+.centered-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Adjust the size for medium devices (tablets) */
+@media (min-width: 768px) {
+  .portfolio-item img {
+    max-width: 90%;
+  }
+}
+
+/* Adjust the size for large devices (desktops) */
+@media (min-width: 992px) {
+  .portfolio-item img {
+    max-width: 80%;
+  }
+}
+
+/* Adjust the size for extra large devices (large desktops) */
+@media (min-width: 1200px) {
+  .portfolio-item img {
+    max-width: 70%;
+  }
+}
+
 .btn-custom {
   background-color: var(--celtic-blue);
   color: #ffffff;
@@ -46,6 +121,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Contact Form */
 form {
