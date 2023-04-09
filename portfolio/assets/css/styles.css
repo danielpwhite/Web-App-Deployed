@@ -23,10 +23,28 @@
 
 #loading-number {
   position: absolute;
-  right: 10px;
-  top: -30px;
-  font-size: 16px;
+  right: -45px;
+  top: -40px;
+  font-size: 20px;
   color: #3498db;
+}
+
+.loading-text {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  font-weight: bold;
+  animation: blink 1s linear infinite;
+  color: var(--silver);
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
 }
 
 .techie-font {
@@ -46,11 +64,22 @@
 
 /*---- Header ----*/
 header {
-  background-color: var(--celtic-blue)
+  position: relative;
+  text-align: center;
+  overflow: hidden; /* To make sure the image doesn't overflow the header */
+  padding-top: 30px; /* Adjust this value to your desired spacing */
+  padding-bottom: 30px; /* Adjust this value to your desired spacing */
+}
+
+.header-img {
+  max-width: 100%; /* Ensure the image doesn't exceed the header's width */
+  max-height: 100%; /* Ensure the image doesn't exceed the header's height */
+  object-fit: cover; /* Resize the image to fit and maintain aspect ratio */
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 body {
-
+  background-color: #000;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -64,13 +93,31 @@ h1, h2, h3, h4, h5, h6, p {
 /* Change the font size and color for headings */
 h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
-  color: #4a4a4a;
+  color: var(--silver);
+}
+
+h2 {
+  padding-bottom: 30px; /* Adjust this value to your desired spacing */
+}
+
+h4 {
+  padding-top: 30px; /* Adjust this value to your desired spacing */
+}
+
+p {
+  color: var(--silver);
 }
 
 /* Make the main picture smaller */
 .portfolio-item img {
   max-width: 80%; /* Adjust the width of the image */
   margin: 0 auto; /* Center the image horizontally */
+  padding-top: 30px; /* Adjust this value to your desired spacing */
+  padding-bottom: 30px; /* Adjust this value to your desired spacing */
+}
+
+.projects {
+    padding: 100px 0; /* Add 100px padding to the top and bottom */
 }
 
 /* Center main image */
@@ -127,6 +174,10 @@ h1, h2, h3, h4, h5, h6 {
 form {
   max-width: 500px;
   margin: 0 auto;
+}
+
+form label {
+  color: var(--silver);
 }
 
 /* Navigation links hover effect */
