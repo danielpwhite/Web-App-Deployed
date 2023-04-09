@@ -1,0 +1,108 @@
+/*---- Header ----*/
+header {
+  background-image: url('/portfolio/assets/img/header-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+body {
+
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: var(--bs-font-family);
+}
+
+.navbar-nav .nav-item .nav-link .navbar-brand {
+  font-family: var(--bs-font-family);
+}
+
+/* Change the font size and color for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 2rem;
+  color: #4a4a4a;
+}
+
+/* Add custom styles for buttons */
+.btn-custom {
+  background-color: var(--celtic-blue);
+  color: #ffffff;
+  font-family: var(--bs-font-family);
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.btn-custom:hover {
+  background-color: #0D5DAD;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-custom:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Form */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Navigation links hover effect */
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link:focus {
+  color: var(--celtic-blue);
+  transform: translateY(-3px);
+  transition: all 0.3s ease
+}
+
+.navbar-nav .nav-item .nav-link:active {
+  transform: translateY(0);
+}
+
+/* Social media icons */
+footer a.social-icon {
+  color: #ffffff;
+}
+
+/* Social media icons hover effect */
+footer a.social-icon:hover {
+  color: var(--celtic-blue);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+footer a.social-icon:active {
+  transform: translateY(0);
+}
+
+footer h5 {
+  margin-bottom: 1rem;
+}
+
+/* Remove the underline from social media links */
+.social-icons a {
+  text-decoration: none;
+}
+
+/* Center the social-icons div
+.social-icons {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+*/
+
+/* Add spacing between the social icons */
+.social-icons a {
+  margin-right: 15px;
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}

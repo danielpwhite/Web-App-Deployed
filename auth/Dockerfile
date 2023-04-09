@@ -1,16 +1,16 @@
 # Setup Python environment and copy built assets
 FROM python:3.8-slim-buster
 
-# Set the working directory to /app
+# Set the working directory to /auth
 WORKDIR /auth
 
-# Copy the current directory contents into the container at /app
+# Copy the current directory contents into the container at /auth
 COPY . /auth
 
 # Install the required packages
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 5000
+# Expose portfolio 5000
 EXPOSE 5000
 
 # Set environment variables
