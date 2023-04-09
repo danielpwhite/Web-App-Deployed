@@ -1,0 +1,19 @@
+@charset "UTF-8";
+:root {
+    --bs-font-sans-serif: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --bs-font-family: var(--bs-font-sans-serif);
+
+    /* CSS HEX */
+    --phlox: #e407feff;
+    --dark-violet: #a211c3ff;
+    --red-cmyk: #e50000ff;
+    --black: #030203ff;
+    --tropical-indigo: #8d82ffff;
+    --celtic-blue: #0f6eceff;
+    --raisin-black: #292629ff;
+    --silver: #c4c6c5ff;
+    --bole: #73402bff;
+    --turkey-red: #a60d07ff;
+    --blood-red: hsla(0, 98%, 20%, 1);
+}

@@ -90,9 +90,9 @@ def load_user(user_id):
     return user
 
 
-@app.route('/auth/static/<path:path>')
+@app.route('/auth/assets/<path:path>')
 def send_static(path):
-    return send_from_directory('static', path)
+    return send_from_directory('assets', path)
 
 
 if __name__ == "__main__":

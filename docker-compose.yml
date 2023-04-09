@@ -1,26 +1,35 @@
 version: "0.1"
 services:
-  auth:
-    build: ./auth
+  #auth:
+    #build: ./auth
+    #ports:
+      #- "5000:5000"
+    #depends_on:
+      #- db
+      #- redis
+    #env_file:
+      #- .env
+    #volumes:
+      #- ./auth:/auth
+
+  portfolio:
+    build: ./portfolio
     ports:
-      - "5000:5000"
-    depends_on:
-      - db
-      - redis
+      - "5001:5001"
     env_file:
       - .env
     volumes:
-      - ./auth:/auth
+      - ./portfolio:/portfolio
 
-  db:
-    image: postgres:13
-    env_file:
-      - .env
-    volumes:
-      - pgdata:/var/lib/postgresql/data
+  #db:
+    #image: postgres:13
+    #env_file:
+      #- .env
+    #volumes:
+      #- pgdata:/var/lib/postgresql/data
 
-  redis:
-    image: "redis:latest"
+  #redis:
+    #image: "redis:latest"
 
-volumes:
-  pgdata:
+#volumes:
+  #pgdata:
