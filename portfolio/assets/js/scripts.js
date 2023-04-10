@@ -20,9 +20,20 @@ $(document).ready(function () {
       // Add 'show-content' class to '.main-content' when loading is complete
       $('.main-content').css('visibility', 'visible').addClass('show-content');
     }
-  }, 12); // 10 milliseconds for each 1% progress
+  }, 3.5); // 10 milliseconds for each 1% progress
 });
 
+// Smooth scroll down
+$(document).ready(function () {
+  $('.scroll-down-btn').click(function () {
+    $('html, body').animate(
+      {
+        scrollTop: $('#intro').offset().top,
+      },
+      500
+    );
+  });
+});
 
 
 

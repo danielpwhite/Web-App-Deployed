@@ -2,13 +2,14 @@
 #loading-bar-container {
   position: fixed;
   top: 50%;
-  left: 25%; /* Adjust the left position to center the loading bar */
-  width: 50%; /* Adjust the width of the loading bar */
+  left: 40%; /* Adjust the left position to center the loading bar */
+  width: 20%; /* Adjust the width of the loading bar */
   height: 4px;
-  background-color: #eee;
+  background-color: var(--raisin-black);
   z-index: 9999;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 
@@ -34,7 +35,6 @@
   top: -40px;
   left: 0;
   font-weight: bold;
-  animation: blink 1s linear infinite;
   color: var(--silver);
 }
 
@@ -55,57 +55,193 @@
 /*---- Hide Main Content Initially ----*/
 .main-content {
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 0.575s ease;
 }
 
 .show-content {
   opacity: 1;
 }
 
-/*---- Header ----*/
-header {
-  position: relative;
-  text-align: center;
-  overflow: hidden; /* To make sure the image doesn't overflow the header */
-  padding-top: 30px; /* Adjust this value to your desired spacing */
-  padding-bottom: 30px; /* Adjust this value to your desired spacing */
+/* Adjust the height of the navbar */
+.navbar {
+  min-height: 50px; /* Set the desired height of the navbar */
+  background-color: var(--night);
 }
 
-.header-img {
-  max-width: 100%; /* Ensure the image doesn't exceed the header's width */
-  max-height: 100%; /* Ensure the image doesn't exceed the header's height */
-  object-fit: cover; /* Resize the image to fit and maintain aspect ratio */
-  margin: 0 auto; /* Center the image horizontally */
+/* Navigation links hover effect */
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link:focus {
+  color: var(--celtic-blue);
+  transform: translateY(-3px);
+  transition: all 0.3s ease
 }
 
-body {
-  background-color: #000;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  font-family: var(--bs-font-family);
+.navbar-nav .nav-item .nav-link:active {
+  transform: translateY(0);
 }
 
 .navbar-nav .nav-item .nav-link .navbar-brand {
   font-family: var(--bs-font-family);
 }
 
-/* Change the font size and color for headings */
-h1, h2, h3, h4, h5, h6 {
-  font-size: 2rem;
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*---- Header ----*/
+
+header {
+  background-color: var(--celtic-blue);
+  padding: 18rem 0;
+  height: 100vh; /* Adjust this as needed*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/portfolio/assets/img/header-bg-combined.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+
+  /* align-items: center;*/
+}
+
+/*---- Body ----*/
+
+.projects {
+  background-color: var(--celtic-blue);
+  padding: 20rem 0;
+  height: 85vh; /* Adjust this as needed*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/portfolio/assets/img/mangrillaz3.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body {
+  /*background-color: #000;*/
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: var(--bs-font-family);
+  color: #ffffff;
+  font-size: 4.75rem;
+  font-weight: bold;
+  margin-bottom: -25px;
+}
+
+.subtitle {
+  font-family: var(--bs-font-family);
   color: var(--silver);
+  font-size: 4.75rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* MANGA RILLAZ SLIDE */
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title-animation {
+  animation-name: slide-up;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.lead {
+  font-size: 2rem;
+}
+
+.intro h2 {
+  font-family: var(--bs-font-family);
+  color: var(--raisin-black-darker);
+  font-size: 2rem;
+  padding-bottom: 30px; /* Adjust this value to your desired spacing */
 }
 
 h2 {
+  font-family: var(--bs-font-family);
+  color: var(--raisin-black-darker);
+  font-size: 2rem;
   padding-bottom: 30px; /* Adjust this value to your desired spacing */
+}
+
+/* Change the font size and color for headings */
+h3, h4, h6 {
+  font-family: var(--bs-font-family);
+  font-size: 2rem;
+  color: var(--raisin-black-darker);
 }
 
 h4 {
   padding-top: 30px; /* Adjust this value to your desired spacing */
 }
 
+h5 {
+  font-family: var(--bs-font-family);
+  font-size: 2rem;
+  color: #ffffff;
+}
+
 p {
-  color: var(--silver);
+  font-family: var(--bs-font-family);
+  color: var(--raisin-black-darker);
 }
 
 /* Make the main picture smaller */
@@ -114,6 +250,11 @@ p {
   margin: 0 auto; /* Center the image horizontally */
   padding-top: 30px; /* Adjust this value to your desired spacing */
   padding-bottom: 30px; /* Adjust this value to your desired spacing */
+}
+
+.intro {
+  padding-top: 100px; /* Adjust this value to your desired spacing */
+  padding-bottom: 100px; /* Adjust this value to your desired spacing */
 }
 
 .projects {
@@ -169,6 +310,23 @@ p {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
+/* Scroll-down button */
+.scroll-down-btn {
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.scroll-down-btn i {
+  color: #000;
+  font-size: 36px;
+}
 
 /* Contact Form */
 form {
@@ -178,18 +336,6 @@ form {
 
 form label {
   color: var(--silver);
-}
-
-/* Navigation links hover effect */
-.navbar-nav .nav-item .nav-link:hover,
-.navbar-nav .nav-item .nav-link:focus {
-  color: var(--celtic-blue);
-  transform: translateY(-3px);
-  transition: all 0.3s ease
-}
-
-.navbar-nav .nav-item .nav-link:active {
-  transform: translateY(0);
 }
 
 /* Social media icons */
