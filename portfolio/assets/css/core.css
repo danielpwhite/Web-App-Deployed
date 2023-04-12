@@ -5,6 +5,7 @@
     --bs-font-family: var(--bs-font-sans-serif);
 
     /* CSS HEX */
+    --white: #ffffff;
     --phlox: #e407feff;
     --dark-violet: #a211c3ff;
     --red-cmyk: #e50000ff;
@@ -12,8 +13,11 @@
     --tropical-indigo: #8d82ffff;
     --celtic-blue: #0f6eceff;
     --raisin-black: #292629ff;
+    --raisin-black-darker: #242426ff;
     --silver: #c4c6c5ff;
     --bole: #73402bff;
     --turkey-red: #a60d07ff;
     --blood-red: hsla(0, 98%, 20%, 1);
+    --night: #0d0d0eff;
+    --azul: #0072cdff;
 }
