@@ -6,7 +6,7 @@
   width: 20%; /* Adjust the width of the loading bar */
   height: 4px;
   background-color: var(--raisin-black);
-  z-index: 9999;
+  z-index: 999;
   margin-left: auto;
   margin-right: auto;
 
@@ -62,28 +62,51 @@
   opacity: 1;
 }
 
+#main-navbar {
+  background-color: var(--azul);
+  transition: background-color 0.3s ease, opacity 0.575s ease;
+
+}
+
+/*
+#main-navbar .navbar-brand:hover {
+    color: #000 !important;
+}
+*/
+
+.hide-navbar {
+  opacity: 0;
+}
+
 /* Adjust the height of the navbar */
 .navbar {
   min-height: 50px; /* Set the desired height of the navbar */
-  background-color: var(--night);
+  /*color: var(--raisin-black);*/
+  /*background-color: var(--night);*/
 }
+
+/* Set the text color to black for nav-links */
+.navbar .navbar-nav .nav-item .nav-link {
+  color: var(--raisin-black);
+}
+
 
 /* Navigation links hover effect */
 .navbar-nav .nav-item .nav-link:hover,
 .navbar-nav .nav-item .nav-link:focus {
-  color: var(--celtic-blue);
+  /*
   transform: translateY(-3px);
   transition: all 0.3s ease
+   */
 }
 
 .navbar-nav .nav-item .nav-link:active {
   transform: translateY(0);
 }
 
-.navbar-nav .nav-item .nav-link .navbar-brand {
+.navbar-nav .nav-item .nav-link {
   font-family: var(--bs-font-family);
 }
-
 
 .nav-container {
   display: flex;
@@ -105,19 +128,65 @@
   }
 }
 
-@media (min-width: 992px) {
-  .navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+/* Sticky navbar */
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /*-webkit-backface-visibility: hidden;  Fixes stuttering issue in WebKit browsers */
+  /*backface-visibility: hidden;  Fixes stuttering issue in other browsers */
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); */
 }
 
-.navbar-brand {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.sticky-navbar.large-navbar {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
+
+/* Add box-shadow to scrolled-navbar class */
+.sticky-navbar.scrolled-navbar {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Nav-link underline animation */
+.nav-item a {
+    position: relative;
+}
+
+.nav-item a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-item a:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 0;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-item a.hover-out::after {
+    transform: scaleX(1);
+}
+
 
 /*---- Header ----*/
 
@@ -129,7 +198,7 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/portfolio/assets/img/header-bg-combined.jpg');
+  background-image: url('/portfolio/assets/img/header-bg-combined.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

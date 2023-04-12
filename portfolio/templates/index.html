@@ -21,11 +21,11 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
-<body>
+<body id="top">
     <!-- Add jQuery and Boostrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Add custom JS -->
+    <!-- Add custom JS/jQuery -->
     <script src="/portfolio/assets/js/scripts.js"></script>
     <!-- Inline jQuery -->
     <script>
@@ -42,34 +42,34 @@
         <div id="loading-number" class="techi-font">0%</div>
     </div>
 
+    <!-- ================== Navigation ================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-navbar main-navbar hide-navbar" id="main-navbar">
+        <div class="container">
+            <span class="app-brand-logo demo">
+                <img src="../assets/img/mangrillaz2.png" alt="New Logo" width="68" height="44">
+            </span>
+            <!-- <a class="navbar-brand" href="#">Manga Rillaz</a> -->
+            <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#top">Home</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-form">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- ================== Main Body ================== -->
     <div class="main-content">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <span class="app-brand-logo demo">
-                    <img src="../assets/img/mangrillaz2.png" alt="New Logo" width="68" height="44">
-                </span>
-                <a class="navbar-brand" href="#">Manga Rillaz</a>
-                <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
         <!-- Header -->
         <header>
             <div class="container header-container">
@@ -157,11 +157,11 @@
                 <div class="col-lg-4 text-center">
                     <img class="img-fluid" src="/portfolio/assets/img/feature2.jpg" alt="Feature 2" />
                     <h4>Offshore Fishing Edition</h4>
-                    <p class="text-muted">Manga Rillaz is creating the first and BEST offshore fishing collection in the history of NFTs. We don't go fishing, we go catching.</p>
+                    <p class="text-muted">Manga Rillaz is creating the first and BEST offshore fishing collection in the history of NFTs. The variation </p>
                 </div>
                 <!-- Feature 3 -->
                 <div class="col-lg-4 text-center">
-                    <img class="img-fluid" src="/portfolio/assets/img/TurtleKnight_bigger.png" alt="Feature 3" />
+                    <img class="img-fluid" src="/portfolio/assets/img/TurtleKnight_bigger_cropped.png" alt="Feature 3" />
                     <h4>Pixel Art</h4>
                     <p class="text-muted">2D Video Game art? Soon.</p>
                 </div>
@@ -169,7 +169,7 @@
         </section>
 
         <!-- Contact Form -->
-        <section class="container my-5">
+        <section id="contact-form" class="container my-5">
             <h2 class="text-center mb-4">Get in Touch</h2>
             <form>
                 <div class="mb-3">
@@ -209,4 +209,20 @@
         </footer>
 
     </div> <!-- ========end main-content======== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var navbar = document.querySelector('.navbar');
+
+            navbar.classList.add('large-navbar');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 10) {
+                    navbar.classList.remove('large-navbar');
+                } else {
+                    navbar.classList.add('large-navbar');
+                }
+            });
+        });
+    </script>
+
 </body>
