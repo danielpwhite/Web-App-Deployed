@@ -1,3 +1,11 @@
+body {
+  /*background-color: #000;*/
+}
+
+body.loading {
+  background-color: black;
+}
+
 /* --Loading bar --*/
 #loading-bar-container {
   position: fixed;
@@ -11,7 +19,6 @@
   margin-right: auto;
 
 }
-
 
 #loading-bar {
   position: absolute;
@@ -215,9 +222,8 @@ header {
 /*---- Body ----*/
 
 .projects {
-  background-color: var(--celtic-blue);
   padding: 20rem 0;
-  height: 85vh; /* Adjust this as needed*/
+  height: 100vh; /* Adjust this as needed*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,10 +233,6 @@ header {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
-
-body {
-  /*background-color: #000;*/
 }
 
 .title-container {
@@ -280,7 +282,7 @@ h1 {
 .intro h2 {
   font-family: var(--bs-font-family);
   color: var(--raisin-black-darker);
-  font-size: 2rem;
+  font-size: 4rem;
   padding-bottom: 30px; /* Adjust this value to your desired spacing */
 }
 
@@ -300,6 +302,7 @@ h3, h4, h6 {
 
 h4 {
   padding-top: 30px; /* Adjust this value to your desired spacing */
+  color: var(--raisin-black);
 }
 
 h5 {
@@ -324,10 +327,6 @@ p {
 .intro {
   padding-top: 100px; /* Adjust this value to your desired spacing */
   padding-bottom: 100px; /* Adjust this value to your desired spacing */
-}
-
-.projects {
-    padding: 100px 0; /* Add 100px padding to the top and bottom */
 }
 
 /* Center main image */
@@ -395,6 +394,15 @@ p {
 .scroll-down-btn i {
   color: #000;
   font-size: 36px;
+}
+
+#artist-story {
+  padding: 18px 18px 20px;
+}
+
+.lore {
+  font-size: 4rem;
+  padding-bottom: 30px; /* Adjust this value to your desired spacing */
 }
 
 /* Contact Form */

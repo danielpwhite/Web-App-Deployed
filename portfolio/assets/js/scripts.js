@@ -4,6 +4,25 @@ function updateLoadingBar(progress) {
   $('#loading-number').text(progress + '%');
 }
 
+// Navbar shrink
+document.addEventListener('DOMContentLoaded', function () {
+  var navbar = document.querySelector('.navbar');
+
+  navbar.classList.add('large-navbar');
+
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 10) {
+      navbar.style.transition = 'padding-top 0.5s ease-in-out, padding-bottom 0.5s ease-in-out, box-shadow 0.15s ease-in-out';
+      navbar.classList.remove('large-navbar');
+      navbar.classList.add('scrolled-navbar');
+    } else {
+      navbar.style.transition = 'padding-top 0s, padding-bottom 0s, box-shadow 0s';
+      navbar.classList.add('large-navbar');
+      navbar.classList.remove('scrolled-navbar');
+    }
+  });
+});
+
 //////////////// jQuery ////////////////
 
 // Loading bar
@@ -24,6 +43,8 @@ $(document).ready(function () {
 
       // Remove 'hide-navbar' class from '#main-navbar' when loading is complete
       $('#main-navbar').removeClass('hide-navbar');
+
+      $('body').removeClass('loading');
     }
   }, 3.5); // 3.5 milliseconds for each 1% progress
 });
@@ -83,24 +104,4 @@ $(document).ready(function () {
     }
   });
 });
-
-// Navbar shrink
-document.addEventListener('DOMContentLoaded', function () {
-  var navbar = document.querySelector('.navbar');
-
-  navbar.classList.add('large-navbar');
-
-  window.addEventListener('scroll', function () {
-    if (window.pageYOffset > 10) {
-      navbar.style.transition = 'padding-top 0.5s ease-in-out, padding-bottom 0.5s ease-in-out, box-shadow 0.15s ease-in-out';
-      navbar.classList.remove('large-navbar');
-      navbar.classList.add('scrolled-navbar');
-    } else {
-      navbar.style.transition = 'padding-top 0s, padding-bottom 0s, box-shadow 0s';
-      navbar.classList.add('large-navbar');
-      navbar.classList.remove('scrolled-navbar');
-    }
-  });
-});
-
 
