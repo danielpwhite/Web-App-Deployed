@@ -2,7 +2,7 @@
 This project is a training exercise combining multiple disciplines to build a containerized web application. By interweaving these disciplines, this project aims to showcase a scalable, fault-tolerant approach to modern web development and devops.
 
 ### Web development
-Designing a microservices-based web application consisting of authentication and portfolio services that seamlessly communicate via RESTful APIs, forming the foundation of the application.
+Designing a microservices-based web application consisting of authentication and portfolio services that seamlessly communicate via RESTful APIs, forming the foundation of the application using flask.
 ### Containerization
 Utilizing Docker to package each service into a container, ensuring consistent deployment and runtime environments throughout the application lifecycle, providing a strong basis for scalability and manageability.
 ### Networking
