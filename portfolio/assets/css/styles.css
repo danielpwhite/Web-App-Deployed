@@ -98,14 +98,15 @@ body.loading {
 }
 
 
-/* Navigation links hover effect */
+/* Navigation links hover effect
 .navbar-nav .nav-item .nav-link:hover,
 .navbar-nav .nav-item .nav-link:focus {
-  /*
+
   transform: translateY(-3px);
   transition: all 0.3s ease
-   */
+
 }
+*/
 
 .navbar-nav .nav-item .nav-link:active {
   transform: translateY(0);
@@ -194,6 +195,14 @@ body.loading {
     transform: scaleX(1);
 }
 
+.navbar-brand, .nav-link {
+  color: var(--raisin-black);
+  text-decoration: none;
+}
+
+.navbar.scrolled-navbar .navbar-brand, .navbar.scrolled-navbar {
+  color: #FFFFFF;
+}
 
 /*---- Header ----*/
 
