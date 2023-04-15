@@ -17,6 +17,7 @@ Implementing Prometheus for monitoring the performance and health of the applica
 ## Tech Stack
 
 ### Back-end
+- [Flask](https://flask.palletsprojects.com/en/2.2.x/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy)
 - [Redis](https://redis.io/)
