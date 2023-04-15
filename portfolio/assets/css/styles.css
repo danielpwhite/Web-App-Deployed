@@ -75,12 +75,6 @@ body.loading {
 
 }
 
-/*
-#main-navbar .navbar-brand:hover {
-    color: #000 !important;
-}
-*/
-
 .hide-navbar {
   opacity: 0;
 }
@@ -92,21 +86,62 @@ body.loading {
   /*background-color: var(--night);*/
 }
 
+.navbar-nav {
+    padding-right: 10%;
+}
+
+/* Connect Wallet button */
+.connect-wallet-btn {
+  background-color: var(--raisin-black);
+  border-radius: 10px;
+  margin-left: 15px;
+}
+
+.connect-wallet-btn:hover,
+.connect-wallet-btn:focus,
+.connect-wallet-btn:active,
+.connect-wallet-btn:focus:active,
+.connect-wallet-btn:focus:hover {
+  background-color: var(--raisin-black-darker) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Connect Wallet dropdown */
+.dropdown-menu {
+  border-radius: 10px;
+  background-color: var(--raisin-black);
+}
+
+.dropdown-item {
+  background-color: var(--white);
+  color: var(--raisin-black);
+  border-radius: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active,
+.dropdown-item:focus:active,
+.dropdown-item:focus:hover {
+  background-color: var(--raisin-black-darker) !important;
+  color: white;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Center wallet dropdown under Connect button */
+.connect-wallet-btn + .dropdown-menu {
+  left: 55%;
+  transform: translateX(-50%);
+}
+
 /* Set the text color to black for nav-links */
 .navbar .navbar-nav .nav-item .nav-link {
   color: var(--raisin-black);
 }
-
-
-/* Navigation links hover effect
-.navbar-nav .nav-item .nav-link:hover,
-.navbar-nav .nav-item .nav-link:focus {
-
-  transform: translateY(-3px);
-  transition: all 0.3s ease
-
-}
-*/
 
 .navbar-nav .nav-item .nav-link:active {
   transform: translateY(0);
