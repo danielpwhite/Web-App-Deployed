@@ -35,22 +35,35 @@
         $('.scroll-down-btn').click(function () {
             $('html, body').animate(
                 {
-                    scrollTop: $('#intro').offset().top,
+                    scrollTop: $('#projects').offset().top,
                 },
-                500,
-                'linear'
+                50,
+                'swing'
             );
         });
 
         $('a[href*="#"]').on('click', function (e) {
-            e.preventDefault();
-            $('html, body').animate(
-                {
-                    scrollTop: $($(this).attr('href')).offset().top,
-                },
-                500,
-                'linear'
-            );
+            var target = $(this).attr('href');
+
+            if (target === '#') {
+                e.preventDefault();
+                $('html, body').animate(
+                    {
+                        scrollTop: 0,
+                    },
+                    50,
+                    'swing'
+                );
+            } else {
+                e.preventDefault();
+                $('html, body').animate(
+                    {
+                        scrollTop: $(target).offset().top,
+                    },
+                    50,
+                    'swing'
+                );
+            }
         });
     }
 
@@ -63,8 +76,8 @@
                 {
                     scrollTop: $(target).offset().top,
                 },
-                500,
-                'linear'
+                50,
+                'swing'
             );
         });
     }
