@@ -12,7 +12,7 @@
         navbar.classList.remove('large-navbar');
         navbar.classList.add('scrolled-navbar');
       } else {
-        navbar.style.transition = 'padding-top 0.5s ease-in-out, padding-bottom 0.5s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out';
+        navbar.style.transition = 'padding-top 0.5s ease-in-out, padding-bottom 0s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out';
         navbar.classList.add('large-navbar');
         navbar.classList.remove('scrolled-navbar');
       }
@@ -23,7 +23,12 @@
   function init() {
     document.addEventListener('DOMContentLoaded', function () {
       setupNavbar();
+
     });
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // Start the application

@@ -1,21 +1,20 @@
-# Setup Python environment and copy built assets
 FROM python:3.8-slim-buster
 
-# Set the working directory to /portfolio
 WORKDIR /portfolio
 
-# Copy the current directory contents into the container at /portfolio
 COPY . /portfolio
 
-# Install the required packages
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose portfolio 5000
-EXPOSE 5001
+# Install necessary packages for live-reloading
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    inotify-tools \
+    && rm -rf /var/lib/apt/lists/*
 
-# Set environment variables
 ENV PYTHONPATH="/portfolio:${PYTHONPATH}"
 ENV FLASK_APP=app.py
 
+EXPOSE 5001
+
 # Run the command to start the server
-CMD ["gunicorn", "--bind",  "0.0.0.0:5001", "app:app"]
+CMD ["hupper", "-m", "gunicorn", "--bind",  "0.0.0.0:5001", "app:app", "-w", "1"]

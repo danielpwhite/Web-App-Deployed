@@ -122,20 +122,6 @@ body.loading {
   align-items: center;
 }
 
-@media (min-width: 992px) {
-  .nav-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    width: 100%;
-    text-align: right;
-  }
-}
-
 /* Sticky navbar */
 .sticky-navbar {
   position: sticky;
@@ -164,14 +150,14 @@ body.loading {
 .nav-item a::before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 80.5%;
     height: 1px;
-    background-color: #000;
+    background-color: var(--raisin-black);
     bottom: 0;
-    left: 0;
+    left: 10%;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.15s ease-in;
 }
 
 .nav-item a:hover::before {
@@ -181,14 +167,14 @@ body.loading {
 .nav-item a::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 80.5%;
     height: 1px;
-    background-color: #000;
+    background-color: var(--raisin-black);
     bottom: 0;
     right: 0;
     transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
+    transform-origin: left;
+    transition: transform 0.15s ease-in;
 }
 
 .nav-item a.hover-out::after {
@@ -208,7 +194,7 @@ body.loading {
 
 header {
   background-color: var(--celtic-blue);
-  padding: 18rem 0;
+  padding: 12rem 0;
   height: 100vh; /* Adjust this as needed*/
   display: flex;
   flex-direction: column;
@@ -222,10 +208,21 @@ header {
 }
 
 .header-container {
+  /*min-height: 600px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;*/
 
   /* align-items: center;*/
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  padding-top: 100px; /* Adjust this value to your desired spacing */
+  padding-bottom: 100px; /* Adjust this value to your desired spacing */
 }
 
 /*---- Body ----*/
@@ -244,10 +241,6 @@ header {
   background-repeat: no-repeat;
 }
 
-.title-container {
-  display: flex;
-  flex-direction: column;
-}
 
 h1 {
   font-family: var(--bs-font-family);
@@ -298,8 +291,8 @@ h1 {
 h2 {
   font-family: var(--bs-font-family);
   color: var(--raisin-black-darker);
-  font-size: 2rem;
-  padding-bottom: 30px; /* Adjust this value to your desired spacing */
+  font-size: 4rem;
+  padding-bottom: 15px; /* Adjust this value to your desired spacing */
 }
 
 /* Change the font size and color for headings */
@@ -325,24 +318,21 @@ p {
   color: var(--raisin-black-darker);
 }
 
-/* Make the main picture smaller */
-.portfolio-item img {
-  max-width: 80%; /* Adjust the width of the image */
-  margin: 0 auto; /* Center the image horizontally */
-  padding-top: 30px; /* Adjust this value to your desired spacing */
-  padding-bottom: 30px; /* Adjust this value to your desired spacing */
-}
-
-.intro {
-  padding-top: 100px; /* Adjust this value to your desired spacing */
-  padding-bottom: 100px; /* Adjust this value to your desired spacing */
+.project-image:hover {
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Center main image */
 .centered-img {
+  max-width: 80%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 1), 0 3px 6px rgba(0, 0, 0, 1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.centered-img:hover {
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Adjust the size for medium devices (tablets) */
@@ -366,11 +356,43 @@ p {
   }
 }
 
+
+@media (min-width: 992px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .img-fluid {
+    max-width: 70%;
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .img-fluid {
+    max-width: 70%;
+    text-align: right;
+  }
+}
+
+
 .btn-custom {
   background-color: var(--celtic-blue);
   color: #ffffff;
   font-family: var(--bs-font-family);
   transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Button hover effect */
