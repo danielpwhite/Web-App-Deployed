@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Core CSS -->
     <link rel="stylesheet" href="/portfolio/assets/css/core.css" class="template-customizer-core-css" />
-    <!-- Add Pace.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
@@ -28,14 +26,6 @@
     <!-- Add custom JS/jQuery -->
     <script src="/portfolio/assets/js/scripts.js"></script>
     <script src="/portfolio/assets/js/scripts-jquery.js"></script>
-    <!-- Inline jQuery -->
-    <script>
-        $(document).ready(function() {
-            Pace.on('done', function() {
-                $('body').addClass('page-loaded');
-            });
-        });
-    </script>
     <!-- ================== Preloading ================== -->
     <div id="loading-bar-container">
         <div class="loading-text">LOADING...</div>
@@ -47,7 +37,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-navbar main-navbar hide-navbar" id="main-navbar">
         <div class="container">
             <span class="app-brand-logo demo">
-                <a href="#" target="_blank" id="logo-link">
+                <a href="/" target="_self" id="logo-link">
                     <img src="../assets/img/MR-LOGO.png" alt="New Logo" width="68" height="44">
                 </a>
             </span>
@@ -64,7 +54,7 @@
                             <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact-form">Contacts</a>
+                        <a class="nav-link" href="#bottom">Contacts</a>
                     </li>
                         <li class="nav-item dropdown">
                             <button class="btn btn-primary connect-wallet-btn dropdown-toggle" type="button" id="connectWalletDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -95,7 +85,7 @@
             </div>
         </header>
 
-        <!-- Intro -->
+        <!-- Intro
         <section id="intro" class="intro">
             <div class="container text-center">
                 <h2>INTRO</h2>
@@ -109,7 +99,7 @@
                 </p>
             </div>
         </section>
-
+        -->
 
         <!-- Projects Section -->
         <section id="projects" class="projects mt-5">
@@ -204,7 +194,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="bg-dark text-white py-4">
+        <footer id="bottom" class="bg-dark text-white py-4">
             <div class="container footer-container">
                 <div class="row">
                     <div class="col-md-6">

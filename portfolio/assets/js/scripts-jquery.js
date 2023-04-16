@@ -42,19 +42,11 @@
             );
         });
 
+        // Setup Nav Links (and all links that begin with '#')
         $('a[href*="#"]').on('click', function (e) {
             var target = $(this).attr('href');
 
-            if (target === '#') {
-                e.preventDefault();
-                $('html, body').animate(
-                    {
-                        scrollTop: 0,
-                    },
-                    50,
-                    'swing'
-                );
-            } else {
+            if (target !== '#') {
                 e.preventDefault();
                 $('html, body').animate(
                     {
@@ -64,21 +56,6 @@
                     'swing'
                 );
             }
-        });
-    }
-
-    // Set up nav links to smoothly scroll to target sections
-    function setupNavLinks() {
-        $('a.nav-link').click(function (event) {
-            event.preventDefault();
-            var target = $(this).attr('href');
-            $('html, body').animate(
-                {
-                    scrollTop: $(target).offset().top,
-                },
-                50,
-                'swing'
-            );
         });
     }
 
@@ -106,7 +83,6 @@
         $(document).ready(function () {
             setupLoadingBar();
             setupSmoothScrolling();
-            setupNavLinks();
             setupNavbarBackgroundColor();
         })
     }
