@@ -72,7 +72,6 @@ body.loading {
 #main-navbar {
   background-color: var(--azul);
   transition: background-color 0.3s ease, opacity 0.575s ease;
-
 }
 
 .hide-navbar {
@@ -87,7 +86,7 @@ body.loading {
 }
 
 .navbar-nav {
-    padding-right: 10%;
+    padding-right: 5%;
 }
 
 /* Connect Wallet button */
@@ -134,13 +133,14 @@ body.loading {
 
 /* Center wallet dropdown under Connect button */
 .connect-wallet-btn + .dropdown-menu {
-  left: 55%;
+  left: 54.5%;
   transform: translateX(-50%);
 }
 
 /* Set the text color to black for nav-links */
 .navbar .navbar-nav .nav-item .nav-link {
   color: var(--raisin-black);
+
 }
 
 .navbar-nav .nav-item .nav-link:active {
@@ -174,7 +174,7 @@ body.loading {
 
 /* Add box-shadow to scrolled-navbar class */
 .sticky-navbar.scrolled-navbar {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Nav-link underline animation */
@@ -235,7 +235,7 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-image: url('/portfolio/assets/img/header-bg-combined.jpg');
+  background-image: url('/portfolio/assets/img/header-bg-combined-custom.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -269,7 +269,7 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/portfolio/assets/img/mangrillaz3.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/portfolio/assets/img/mangrillaz3-pattern.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -370,6 +370,10 @@ p {
   box-shadow: 0 12px 18px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
+.centered-img {
+  border-radius: 10px;
+}
+
 /* Adjust the size for medium devices (tablets) */
 @media (min-width: 768px) {
   .portfolio-item img {
@@ -413,12 +417,10 @@ p {
   }
 }
 
-@media (max-width: 768px) {
-  .img-fluid {
-    max-width: 70%;
-    text-align: right;
-  }
+.img-fluid {
+  border-radius: 10px;
 }
+
 
 
 .btn-custom {
