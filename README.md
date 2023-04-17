@@ -27,7 +27,7 @@ Implementing Prometheus for monitoring the performance and health of the applica
 - [Gulp](https://gulpjs.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
-### JS Framework
+### JS Library
 - [jQuery](https://jquery.com/)
 
 ### DevOps
