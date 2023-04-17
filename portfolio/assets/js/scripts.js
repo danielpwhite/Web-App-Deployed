@@ -19,15 +19,54 @@
     });
   }
 
+  // Create Intersection Observer to watch elements and add or remove
+  // classes based on viewport visibility for swip-in/swip-out
+  function onEntry(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("invisible");
+        entry.target.classList.remove("swipe-out");
+        entry.target.classList.add("swipe-in");
+      } else {
+        entry.target.classList.remove("swipe-in");
+        entry.target.classList.add("swipe-out");
+      }
+    });
+  }
+
+  // Set up the swipe animation
+  function setupSwipeInAnimation() {
+    const swipeInElements = document.querySelectorAll(".swipe-in.invisible");
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-200px",
+      threshold: 0.3,
+    };
+
+    const observer = new IntersectionObserver(onEntry, observerOptions);
+
+    swipeInElements.forEach((element) => observer.observe(element));
+  }
+
   // Initialize event listeners
   function init() {
     document.addEventListener('DOMContentLoaded', function () {
       setupNavbar();
-    });
-  }
+      setupSwipeInAnimation()
 
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Initialize TypeIt
+      new TypeIt('.type-it', {
+        strings: ["Manga", "Manga Rillaz"],
+        speed: 150,
+        loop: true,
+        breakLines: false,
+        deleteSpeed: 120,
+        nextStringDelay: 3000,
+        startDelay: 1500,
+        lifeLike: true,
+      }).go();
+    });
   }
 
   // Start the application

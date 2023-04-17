@@ -63,6 +63,7 @@ body.loading {
 .main-content {
   opacity: 0;
   transition: opacity 0.575s ease;
+  background-color: var(--white);
 }
 
 .show-content {
@@ -230,7 +231,7 @@ body.loading {
 header {
   background-color: var(--celtic-blue);
   padding: 12rem 0;
-  height: 100vh; /* Adjust this as needed*/
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -255,6 +256,13 @@ header {
   flex-direction: column;
 }
 
+
+
+.app-brand-logo, .title-container, .lead {
+  padding-left: 5%;
+}
+
+
 .intro {
   padding-top: 100px; /* Adjust this value to your desired spacing */
   padding-bottom: 100px; /* Adjust this value to your desired spacing */
@@ -264,12 +272,12 @@ header {
 
 .projects {
   padding: 20rem 0;
-  height: 100vh; /* Adjust this as needed*/
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/portfolio/assets/img/mangrillaz3-pattern.png');
+  background-image: url('/portfolio/assets/img/project-bg-combined2.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -339,7 +347,9 @@ h3, h4, h6 {
 
 h4 {
   padding-top: 30px; /* Adjust this value to your desired spacing */
-  color: var(--raisin-black);
+  color: var(--raisin-black-darker);
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 h5 {
@@ -373,6 +383,7 @@ p {
 .centered-img {
   border-radius: 10px;
 }
+
 
 /* Adjust the size for medium devices (tablets) */
 @media (min-width: 768px) {
@@ -417,6 +428,43 @@ p {
   }
 }
 
+/* Swipe-in/out effect on project image/text */
+/* initially hide the element */
+.invisible {
+  opacity: 0;
+}
+
+@keyframes swipe-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.swipe-in {
+  animation: swipe-in 1s ease-out both;
+}
+
+@keyframes swipe-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.swipe-out {
+  animation: swipe-out 1s ease-out both;
+}
+
+
 .img-fluid {
   border-radius: 10px;
 }
@@ -457,6 +505,8 @@ p {
   align-items: center;
   border: none;
   cursor: pointer;
+  position: relative;
+  left: 5%;
 }
 
 .scroll-down-btn i {
@@ -465,14 +515,18 @@ p {
 }
 
 #artist-story {
-  padding: 18px 18px 20px;
+  padding: 200px 18px 200px;
 }
 
 .lore {
   font-size: 4rem;
   padding-bottom: 30px; /* Adjust this value to your desired spacing */
+  color: var(--raisin-black);
 }
 
+.lore-paragraph {
+  color: var(--raisin-black) !important;
+}
 /* Contact Form */
 form {
   max-width: 500px;
