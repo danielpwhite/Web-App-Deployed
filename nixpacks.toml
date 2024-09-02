@@ -1,0 +1,15 @@
+[build]
+src = "portfolio"
+
+[phases.setup]
+nixPkgs = ["python38", "python38Packages.pip", "python38Packages.setuptools", "python38Packages.wheel"]
+
+[phases.install]
+cmds = [
+    "python -m venv /opt/venv",
+    ". /opt/venv/bin/activate",
+    "pip install -r requirements.txt"
+]
+
+[start]
+cmd = ". /opt/venv/bin/activate && hupper -m gunicorn --bind 0.0.0.0:${PORT:-5001} app:app -w 1"
