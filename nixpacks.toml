@@ -4,10 +4,19 @@ src = "portfolio"
 [phases.setup]
 nixPkgs = [
     "python38",
+    "python38Packages.pip",
+    "python38Packages.setuptools",
+    "python38Packages.wheel",
     "python38Packages.flask",
     "python38Packages.gunicorn",
     "python38Packages.hupper"
 ]
 
+[phases.install]
+cmds = [
+    "python -m venv /opt/venv",
+    ". /opt/venv/bin/activate"
+]
+
 [start]
-cmd = "gunicorn --bind 0.0.0.0:${PORT:-5001} app:app -w 1"
+cmd = ". /opt/venv/bin/activate && hupper -m gunicorn --bind 0.0.0.0:${PORT:-5001} app:app -w 1"
