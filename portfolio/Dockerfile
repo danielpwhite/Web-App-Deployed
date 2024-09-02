@@ -17,4 +17,4 @@ ENV FLASK_APP=app.py
 EXPOSE 5001
 
 # Run the command to start the server
-CMD ["hupper", "-m", "gunicorn", "--bind",  "0.0.0.0:$PORT", "app:app", "-w", "1"]
+CMD ["hupper", "-m", "gunicorn", "--bind",  "0.0.0.0:5001", "app:app", "-w", "1"]
